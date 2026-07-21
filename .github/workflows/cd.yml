@@ -48,7 +48,9 @@ jobs:
 
             echo "Starting new container..."
             sudo docker run -d \
+              --restart always \
               --name myapp \
-              -p 80:3000 \
-              --restart unless-stopped \
+              -p 8080:80 \
               $IMAGE:latest
+
+            echo "Deployment Completed Successfully."
